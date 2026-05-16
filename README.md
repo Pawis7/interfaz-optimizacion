@@ -1,11 +1,44 @@
+# Interfaz de Optimización Interactiva
 
-  # Interfaz de Optimización Interactiva
+Este es el proyecto de la **Interfaz de Optimización Interactiva**.
 
-  This is a code bundle for Interfaz de Optimización Interactiva. The original project is available at https://www.figma.com/design/MHvuWtfN46buR7m90TAasD/Interfaz-de-Optimizaci%C3%B3n-Interactiva.
+## Requisitos
 
-  ## Running the code
+- [Node.js](https://nodejs.org/) (versión 18 o superior)
+- [Yarn](https://yarnpkg.com/)
 
-  Run `npm i` to install the dependencies.
+## Instalación
 
-  Run `npm run dev` to start the development server.
-  
+Para instalar las dependencias, ejecuta:
+
+```bash
+yarn install
+```
+
+## Desarrollo
+
+Para iniciar el servidor de desarrollo:
+
+```bash
+yarn dev
+```
+
+## Construcción para producción
+
+Para generar el bundle de producción:
+
+```bash
+yarn build
+```
+
+## Subir a GitHub
+
+1. Crea un repositorio nuevo en GitHub (puedes llamarlo `interfaz-optimizacion`).
+2. Copia la URL del repositorio (ej. `https://github.com/tu-usuario/interfaz-optimizacion.git`).
+3. En tu terminal, ejecuta:
+
+```bash
+git remote add origin https://github.com/tu-usuario/interfaz-optimizacion.git
+git branch -M main
+git push -u origin main
+```

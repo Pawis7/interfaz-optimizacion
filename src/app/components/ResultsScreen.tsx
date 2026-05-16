@@ -28,6 +28,21 @@ const profileMetrics: Record<
 export default function ResultsScreen({ profile, onReset }: ResultsScreenProps) {
   const metrics = profileMetrics[profile];
 
+  if (!metrics) {
+    return (
+      <div className="size-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1976D2] to-[#1565C0] p-6 text-white text-center">
+        <h2 className="text-2xl font-bold mb-4">Error de Perfil</h2>
+        <p className="mb-6">No se pudieron encontrar las métricas para el perfil seleccionado.</p>
+        <button 
+          onClick={onReset}
+          className="py-3 px-8 rounded-2xl bg-white text-[#1976D2] font-semibold shadow-lg"
+        >
+          Volver al Inicio
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="size-full flex flex-col bg-gradient-to-br from-[#1976D2] to-[#1565C0] p-6 overflow-y-auto">
       <motion.div
