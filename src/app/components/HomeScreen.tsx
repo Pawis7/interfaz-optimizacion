@@ -7,11 +7,19 @@ interface HomeScreenProps {
 
 export default function HomeScreen({ onOptimize }: HomeScreenProps) {
   return (
-    <div className="size-full flex flex-col bg-[#0F172A] p-6 relative overflow-hidden">
+    <div className="size-full flex flex-col bg-[#020617] p-6 relative overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] size-[50%] bg-blue-600/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] size-[50%] bg-purple-600/10 blur-[120px] rounded-full" />
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute -top-[10%] -left-[10%] size-[60%] bg-blue-600/20 blur-[120px] rounded-full" 
+        />
+        <motion.div 
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.15, 0.1] }}
+          transition={{ duration: 12, repeat: Infinity }}
+          className="absolute -bottom-[10%] -right-[10%] size-[60%] bg-purple-600/20 blur-[120px] rounded-full" 
+        />
       </div>
 
       <motion.div
