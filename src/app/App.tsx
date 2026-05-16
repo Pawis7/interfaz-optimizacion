@@ -4,36 +4,31 @@ import LoadingScreen from './components/LoadingScreen';
 import ResultsScreen from './components/ResultsScreen';
 
 export type AppState = 'home' | 'loading' | 'results';
-export type Profile = 'basico' | 'intermedio' | 'avanzado' | 'experto';
 
 export default function App() {
   const [appState, setAppState] = useState<AppState>('home');
-  const [selectedProfile, setSelectedProfile] = useState<Profile | null>(null);
 
   const handleOptimize = () => {
     setAppState('loading');
     setTimeout(() => {
       setAppState('results');
-    }, 8000);
+    }, 12500);
   };
 
   const handleReset = () => {
     setAppState('home');
-    setSelectedProfile(null);
   };
 
   return (
-    <div className="size-full bg-background">
+    <div className="size-full bg-background overflow-hidden">
       {appState === 'home' && (
         <HomeScreen
-          selectedProfile={selectedProfile}
-          onSelectProfile={setSelectedProfile}
           onOptimize={handleOptimize}
         />
       )}
       {appState === 'loading' && <LoadingScreen />}
       {appState === 'results' && (
-        <ResultsScreen profile={selectedProfile!} onReset={handleReset} />
+        <ResultsScreen onReset={handleReset} />
       )}
     </div>
   );
